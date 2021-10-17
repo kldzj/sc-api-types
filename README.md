@@ -2,6 +2,12 @@
 
 This package includes response typings for the [Star Citizen Wiki API](https://docs.star-citizen.wiki/). Currently types are limited to Star Systems, Ships and their respective relations.
 
+### Installation
+
+npm: `npm install --save-dev sc-api-types`
+
+yarn: `yarn add --dev sc-api-types`
+
 ### Usage
 
 #### Include Relationships

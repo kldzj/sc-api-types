@@ -35,7 +35,16 @@ export interface CelestialObject<L extends Locale = null> {
   system_id: number;
   celestial_object_api_url: string;
   name: string | null;
-  type: string; // todo: union with possible values
+  type:
+    | 'BLACKHOLE'
+    | 'SATELLITE'
+    | 'ASTEROID_FIELD'
+    | 'STAR'
+    | 'PLANET'
+    | 'POI'
+    | 'JUMPPOINT'
+    | 'MANMADE'
+    | 'ASTEROID_BELT';
   age: number | null;
   habitable: boolean | null;
   fairchanceact: boolean | null;
@@ -75,8 +84,8 @@ export interface StarSystem<R extends StarSystemRelations = {}, L extends Locale
   code: string;
   system_api_url: string;
   name: string;
-  status: string; // todo: union with possible values
-  type: string; //todo: union with possible values
+  status: 'N' | 'P' | 'M';
+  type: 'SINGLE_STAR' | 'BINARY';
   position: {
     x: number;
     y: number;

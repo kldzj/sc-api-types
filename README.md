@@ -26,10 +26,10 @@ type ShipWithComponentsResponse = ShipResponse<{ components: true }>;
 If you're using the APIs locale parameter you'll want the response types to reflect the correct description property type. You can tell the response type that you're using the locale parameter like this:
 
 ```typescript
-import { ShipResponse } from 'sc-api-types'M
+import { ShipResponse } from 'sc-api-types';
 
 // now descriptions are of type string instead of the locales object
-type ShipWithStringDescs = ShipResponse<{}, 'en_EN'>
+type ShipWithStringDescs = ShipResponse<{}, 'en_EN'>;
 ```
 
 ### Issues

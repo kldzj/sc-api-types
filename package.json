@@ -1,6 +1,6 @@
 {
   "name": "sc-api-types",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "author": "Nikolai Kolodziej <github@kldzj.dev>",
   "license": "MIT",

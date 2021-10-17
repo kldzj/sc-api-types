@@ -1,4 +1,4 @@
-import { ApiResponse, Description, Locale } from '.';
+import { Description, Locale } from '.';
 
 export interface StarSystemRelations {
   celestial_objects?: boolean;
@@ -97,6 +97,6 @@ export interface StarSystem<R extends StarSystemRelations = {}, L extends Locale
     data: Affiliation[];
   };
   jumppoints: R['jumppoints'] extends true ? { data: Jumppoint[] } : undefined;
-  celestial_objects: R['celestial_objects'] extends true ? {} : undefined;
+  celestial_objects: R['celestial_objects'] extends true ? { data: CelestialObject<L>[] } : undefined;
   updated_at: string;
 }

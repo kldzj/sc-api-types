@@ -7,6 +7,10 @@
   "files": [
     "dist/**/*"
   ],
+  "repository": {
+    "url": "https://github.com/kldzj/sc-api-types",
+    "type": "git"
+  },
   "scripts": {
     "build": "tsc",
     "prebuild": "rimraf dist",

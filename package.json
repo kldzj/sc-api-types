@@ -1,9 +1,12 @@
 {
   "name": "sc-api-types",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Nikolai Kolodziej <github@kldzj.dev>",
   "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "prebuild": "rimraf dist",

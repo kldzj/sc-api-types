@@ -9,14 +9,14 @@ export type IncludeMap<E extends Entity> = E extends 'ship'
 
 export interface ApiUrlOptions<E extends Entity> {
   limit?: number;
-  locale?: ValidLocale;
+  locale?: Locale;
   include?: IncludeMap<E>;
 }
 
-export interface ApiUrl<E extends Entity, I extends IncludeMap<E> | undefined> {
+export interface ApiUrl<E extends Entity, I extends IncludeMap<E> | undefined, L extends Locale | undefined> {
+  locale: L;
   include: I;
   url: string;
-  locale: Locale;
   entity: Entity;
 }
 
@@ -30,7 +30,7 @@ export function getApiUrlBuilder<E extends Entity>(entity: E) {
   return function apiUrlBuilder<O extends ApiUrlOptions<E>>(
     codeOrId?: string | null,
     opts?: O
-  ): ApiUrl<E, O['include']> {
+  ): ApiUrl<E, O['include'], O['locale']> {
     const params = Object.entries(opts ?? {})
       .map(
         ([key, value]) =>

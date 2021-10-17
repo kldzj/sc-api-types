@@ -35,7 +35,14 @@ export function getApiUrlBuilder<E extends Entity>(entity: E) {
     const params = Object.entries(opts ?? {})
       .map(
         ([key, value]) =>
-          `${key}=${encodeURIComponent(typeof value === 'object' ? Object.keys(value).join(',') : value)}`
+          `${key}=${encodeURIComponent(
+            typeof value === 'object'
+              ? Object.entries(value)
+                  .filter(([_key, value]) => !!value)
+                  .map(([key]) => key)
+                  .join(',')
+              : value
+          )}`
       )
       .join('&');
 
@@ -43,7 +50,7 @@ export function getApiUrlBuilder<E extends Entity>(entity: E) {
       entity,
       locale: opts?.locale ?? null,
       include: opts?.include ?? {},
-      url: `${base}${codeOrId ? `/${codeOrId}` : ''}?${params}`,
+      url: `${base}${codeOrId ? `/${encodeURIComponent(codeOrId)}` : ''}?${params}`,
     };
   };
 }

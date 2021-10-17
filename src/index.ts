@@ -18,7 +18,8 @@ export interface ApiResponse<T = any> {
     current_page: number;
     total_pages: number;
     links: {
-      next: string | null;
+      previous?: string;
+      next?: string;
     };
   };
 }

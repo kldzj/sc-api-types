@@ -8,6 +8,7 @@ export type IncludeMap<E extends Entity> = E extends 'ship'
   : {};
 
 export interface ApiUrlOptions<E extends Entity> {
+  page?: number;
   limit?: number;
   locale?: Locale;
   include?: IncludeMap<E>;
@@ -47,9 +48,7 @@ export function getApiUrlBuilder<E extends Entity>(entity: E) {
   };
 }
 
-const builders = {
+export const builders = {
   ship: getApiUrlBuilder('ship'),
   system: getApiUrlBuilder('system'),
 };
-
-export default builders;

@@ -1,4 +1,4 @@
-import { Locale, ShipRelations, StarSystemRelations, ValidLocale } from '.';
+import { Locale, ShipRelations, StarSystemRelations } from '.';
 
 export type Entity = 'ship' | 'system';
 export type IncludeMap<E extends Entity> = E extends 'ship'
@@ -47,7 +47,9 @@ export function getApiUrlBuilder<E extends Entity>(entity: E) {
   };
 }
 
-export const urlBuilder = {
+const builders = {
   ship: getApiUrlBuilder('ship'),
   system: getApiUrlBuilder('system'),
 };
+
+export default builders;

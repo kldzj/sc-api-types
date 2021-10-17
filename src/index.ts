@@ -44,4 +44,4 @@ export type StarSystemsResponse<R extends StarSystemRelations = {}, L extends Lo
 
 export * from './ships';
 export * from './systems';
-export * as util from './util';
+export * as url from './url';
